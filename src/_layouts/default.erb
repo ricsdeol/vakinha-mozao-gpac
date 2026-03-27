@@ -15,11 +15,13 @@
     <script src="<%= asset_path :js %>" defer></script>
     <%= live_reload_dev_js %>
   </head>
-  <body>
+  <body class="pb-16 md:pb-0">
     <%= yield %>
+    <%= render "pix" %>
     <%= render "footer" %>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>lucide.createIcons();</script>
+    <script async src="//www.instagram.com/embed.js"></script>
   </body>
 </html>
