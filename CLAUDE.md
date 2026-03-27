@@ -81,6 +81,25 @@ rake frontend:dev       # esbuild watch mode
 - Ruby version: 3.4.9 (see `.ruby-version`)
 - Node packages use ES modules (`"type": "module"` in package.json)
 
+## Icons
+
+Use **Lucide** icons via CDN — loaded at the bottom of `src/_layouts/default.erb`.
+
+- Docs: https://lucide.dev/
+- Browse all icons: https://lucide.dev/icons/
+- LLM reference: https://lucide.dev/llms.txt
+
+**Usage in ERB templates:**
+```html
+<i data-lucide="icon-name"></i>
+<i data-lucide="paw-print" class="w-5 h-5"></i>
+```
+
+- Icons are rendered automatically by `lucide.createIcons()` at end of `<body>`
+- Size is controlled via Tailwind width/height classes (`w-4 h-4`, `w-6 h-6`, etc.) — default is 24×24 px
+- Color inherits from CSS `currentColor` (use Tailwind text color utilities)
+- Do **not** use emoji as icons — prefer Lucide equivalents when available
+
 ## Bridgetown Documentation
 
 Use Context7 MCP tool with library ID `/websites/bridgetownrb` to query up-to-date Bridgetown docs.

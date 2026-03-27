@@ -1,15 +1,25 @@
 <!doctype html>
-<html lang="<%= site.locale %>">
+<html lang="pt-BR">
   <head>
-    <%= render "head", metadata: site.metadata, title: data.title %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= data.title %> | <%= site.data.general.title %></title>
+    <meta name="description" content="<%= data.description %> | <%= site.data.general.description %>" />
+
+    <%# Open Graph for social sharing %>
+    <meta property="og:title" content=<%= data.title %> | <%= site.data.general.title %>" />
+    <meta property="og:description" content="<%= data.description %> | <%= site.data.general.description %>" />
+    <meta property="og:type" content="website" />
+
+    <link rel="stylesheet" href="<%= asset_path :css %>" />
+    <script src="<%= asset_path :js %>" defer></script>
+    <%= live_reload_dev_js %>
   </head>
-  <body class="<%= data.layout %> <%= data.page_class %>">
-    <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
+  <body>
+    <%= yield %>
+    <%= render "footer" %>
 
-    <main>
-      <%= yield %>
-    </main>
-
-    <%= render "footer", metadata: site.metadata %>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
   </body>
 </html>

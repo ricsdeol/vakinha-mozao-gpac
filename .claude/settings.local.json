@@ -4,7 +4,11 @@
       "mcp__mcp-server-context7__resolve-library-id",
       "mcp__mcp-server-context7__query-docs",
       "WebFetch(domain:context7.com)",
-      "WebFetch(domain:www.bridgetownrb.com)"
+      "WebFetch(domain:www.bridgetownrb.com)",
+      "WebFetch(domain:lucide.dev)",
+      "Bash(while read:*)",
+      "Bash(do mv:*)",
+      "Bash(done)"
     ]
   }
 }

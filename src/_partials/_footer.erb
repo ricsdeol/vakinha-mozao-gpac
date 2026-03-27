@@ -1,3 +1,20 @@
-<footer>
-  Contact me at <a href="mailto:<%= metadata.email %>"><%= metadata.email %></a>
+<footer class="py-12 px-6 text-center bg-ink text-white">
+  <p class="inline-flex items-center gap-2 text-2xl font-black mb-2">
+    Com amor, Mariane <i data-lucide="cake" class="w-6 h-6"></i><i data-lucide="paw-print" class="w-6 h-6"></i>
+  </p>
+  <p class="text-sm mb-6 opacity-60">
+    Uma iniciativa pessoal de Mariane Fumagalli — não é uma campanha oficial do GPAC.
+  </p>
+  <div class="flex flex-col sm:flex-row justify-center gap-4 text-sm mb-8">
+    <a href="https://www.instagram.com/mari_fps/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-white opacity-70 hover:opacity-100 transition-opacity">
+      <%= render "icons/instagram", css_class: nil %> <%= site.data.general.instagram_mariane %>
+    </a>
+    <span class="opacity-30 hidden sm:inline">·</span>
+    <a href="https://www.instagram.com/gpaclimeira/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-white opacity-70 hover:opacity-100 transition-opacity">
+      <%= render "icons/instagram", css_class: nil %> <%= site.data.general.instagram_gpac %>
+    </a>
+  </div>
+  <p class="text-xs opacity-40">
+    Cada doação, por menor que seja, representa esperança para um animal em sofrimento.
+  </p>
 </footer>

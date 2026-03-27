@@ -1,91 +1,39 @@
-/* If you need to add @import statements, do so up here */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Inter:wght@400;500&display=swap");
 
 @import "jit-refresh.css"; /* triggers frontend rebuilds */
 
-/* Set up Tailwind imports */
 @import "tailwindcss";
 
-:root {
-  --body-background: #f2f2f2;
-  --body-color: #444;
-  --heading-color: black;
-  --action-color: #d64045;
+@theme {
+  --color-primary: #E8634A;
+  --color-primary-dark: #C94E37;
+  --color-trust: #2A6F84;
+  --color-trust-light: #EAF4F8;
+  --color-warm: #F59E0B;
+  --color-warm-light: #FEF3C7;
+  --color-nature: #3A9E6F;
+  --color-nature-light: #ECFDF5;
+  --color-surface: #FFF8F2;
+  --color-ink: #2C3E50;
+  --color-ink-light: #6B7280;
+  --font-display: "Poppins", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
-body {
-  background: var(--body-background);
-  color: var(--body-color);
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    "Helvetica", "Arial", sans-serif;
-  margin: 0 8px;
-  font-size: 108%;
-  line-height: 1.5;
-}
-
-a {
-  color: var(--action-color);
-  text-decoration: underline;
-  text-decoration-color: #ffb088;
-}
-
-h1 {
-  margin: 1rem 0 3rem;
-  text-align: center;
-  font-weight: 900;
-  font-size: 2.5rem;
-  color: var(--heading-color);
-  line-height: 1.2;
-}
-
-body > header {
-  margin: 1rem;
-  text-align: center;
-}
-
-body > header img {
-  display: inline-block;
-  width: 400px;
-  max-width: 100%;
-}
-
-body > nav ul {
-  margin: 2rem 0;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-body > nav a {
-  text-decoration: none;
-}
-
-main {
-  margin: 2rem auto 4rem;
-  max-width: 65rem;
-  min-height: calc(100vh - 200px);
-  padding: 25px 25px 50px;
-  background: white;
-  box-shadow: 2px 3px 3px #ddd;
-  border-radius: 3px;
-
-  @media (max-width: 500px) {
-    padding: 16px 16px 50px;
+@layer base {
+  html {
+    scroll-behavior: smooth;
   }
-}
 
-footer {
-  text-align: center;
-  margin-bottom: 4rem;
-  font-size: 1em;
-}
+  body {
+    @apply bg-surface text-ink font-body leading-relaxed;
+  }
 
-hr {
-  border: none;
-  border-top: 2px dotted #bbb;
-  margin: 3rem 0;
+  h1, h2, h3, h4 {
+    @apply font-display leading-tight;
+  }
+
+  a {
+    @apply text-primary no-underline hover:underline;
+  }
 }

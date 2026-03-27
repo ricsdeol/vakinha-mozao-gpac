@@ -1,0 +1,50 @@
+<section id="pix" class="py-20 px-6 bg-warm-light">
+  <div class="max-w-2xl mx-auto text-center">
+    <span class="text-sm font-semibold uppercase tracking-widest mb-3 block text-warm">Doe agora</span>
+    <h2 class="text-3xl md:text-4xl font-black mb-4 text-ink">
+      Sua doação chega na hora
+    </h2>
+    <p class="text-lg mb-12 text-ink-light">
+      Qualquer valor faz diferença para o GPAC. Use o QR Code ou copie a chave PIX abaixo.
+    </p>
+
+    <%# QR Code placeholder — substituir com QR real %>
+    <div class="inline-flex items-center justify-center w-56 h-56 rounded-2xl mb-8 mx-auto border-4 bg-white border-warm">
+      <div class="text-center">
+        <i data-lucide="smartphone" class="w-12 h-12 mb-2 mx-auto text-warm"></i>
+        <p class="text-xs font-medium text-ink-light">QR Code PIX<br/>será inserido aqui</p>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <p class="text-sm font-semibold mb-2 text-ink">Ou copie a chave PIX:</p>
+      <div class="flex items-center justify-center gap-3 flex-wrap">
+        <code class="px-5 py-3 rounded-xl font-mono text-base font-bold bg-white text-ink">
+          <%= site.data.general.pix_key %>
+        </code>
+      </div>
+    </div>
+
+    <div class="text-left max-w-sm mx-auto rounded-2xl p-6 bg-white">
+      <p class="font-bold mb-4 text-ink">Como fazer:</p>
+      <ol class="space-y-3 text-sm text-ink-light">
+        <li class="flex gap-3 items-start">
+          <span class="font-black text-base shrink-0 text-primary">1.</span>
+          Abra o aplicativo do seu banco
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="font-black text-base shrink-0 text-primary">2.</span>
+          Acesse a área PIX e escolha "QR Code" ou "Chave PIX"
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="font-black text-base shrink-0 text-primary">3.</span>
+          Escaneie o QR Code ou cole a chave acima
+        </li>
+        <li class="flex gap-3 items-start">
+          <span class="font-black text-base shrink-0 text-primary">4.</span>
+          Confirme o valor e pronto — você salvou uma vida 🐾
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
