@@ -1,0 +1,29 @@
+<%# ── MOBILE/TABLET: sticky bottom bar (hidden on xl+) ── %>
+<div id="pix-bar-mobile" class="fixed bottom-0 left-0 right-0 z-50 xl:hidden bg-white border-t border-warm/40 shadow-[0_-4px_16px_rgba(0,0,0,0.08)] px-4 py-3 transition-transform duration-300">
+  <div class="flex items-center gap-2 max-w-sm mx-auto">
+    <span class="text-xs font-bold text-ink shrink-0">PIX:</span>
+    <code
+      id="pix-key"
+      data-pix-key="<%= site.data.general.pix_key %>"
+      class="flex-1 font-mono text-xs font-bold text-ink bg-warm-light rounded-lg px-3 py-2 truncate"
+    ><%= site.data.general.pix_key %></code>
+    <button
+      onclick="copyPix()"
+      id="copy-btn"
+      class="shrink-0 bg-primary text-white text-xs font-bold px-3 py-2 rounded-lg flex items-center gap-1 active:scale-95 transition-transform"
+    >
+      <i data-lucide="copy" class="w-3 h-3"></i>
+      Copiar
+    </button>
+  </div>
+</div>
+
+<%# ── DESKTOP: fixed right sidebar (xl+ only) ── %>
+<div id="pix-bar-desktop" class="hidden xl:flex fixed right-4 top-1/2 -translate-y-1/2 z-50 flex-col items-center gap-3 bg-white rounded-2xl shadow-xl border border-warm/30 p-4 w-52 transition-opacity duration-300">
+  <span class="text-xs font-bold uppercase tracking-widest text-warm text-center">Doe agora via PIX</span>
+
+  <%= render "pix/qrcode", size: "sm" %>
+  <%= render "pix/copy_key", size: "sm", btn_id: "copy-btn-desktop" %>
+
+  <p class="text-xs text-ink-light text-center leading-snug">qualquer valor<br/>faz diferença 🐾</p>
+</div>

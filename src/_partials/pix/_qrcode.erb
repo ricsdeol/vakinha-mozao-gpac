@@ -1,0 +1,14 @@
+<%
+  # size: "sm" (sidebar float) | "lg" (seção inline)
+  size ||= "sm"
+  wrapper = size == "lg" ? "w-48 h-48 rounded-2xl" : "w-36 h-36 rounded-xl"
+  icon    = size == "lg" ? "w-16 h-16 mb-2" : "w-12 h-12 mb-1"
+  text    = size == "lg" ? "text-sm" : "text-xs"
+%>
+<%# Substituir div por <img src="qr.png"> com o QR real %>
+<div class="<%= wrapper %> border-2 border-warm bg-warm-light flex items-center justify-center">
+  <div class="text-center">
+    <i data-lucide="qr-code" class="<%= icon %> mx-auto text-warm"></i>
+    <p class="<%= text %> text-ink-light leading-tight">QR Code PIX</p>
+  </div>
+</div>

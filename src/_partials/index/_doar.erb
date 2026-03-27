@@ -1,0 +1,18 @@
+<section id="pix-section" class="py-20 px-6 bg-surface">
+  <div class="max-w-lg mx-auto text-center">
+    <span class="text-sm font-semibold uppercase tracking-widest mb-3 block text-warm">Doe agora via PIX</span>
+    <h2 class="text-3xl md:text-4xl font-black mb-4 text-ink">
+      Sua doação muda vidas
+    </h2>
+    <p class="text-base mb-10 text-ink-light">
+      Escaneie o QR Code ou copie a chave PIX abaixo. Qualquer valor faz diferença para os animais do GPAC.
+    </p>
+
+    <div class="bg-white rounded-3xl shadow-lg border border-warm/20 p-8 flex flex-col items-center gap-6">
+      <%= render "pix/qrcode", size: "lg" %>
+      <%= render "pix/copy_key", size: "lg", btn_id: "copy-btn-section" %>
+
+      <p class="text-sm text-ink-light">qualquer valor faz diferença 🐾</p>
+    </div>
+  </div>
+</section>

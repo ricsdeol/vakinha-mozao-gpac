@@ -1,0 +1,14 @@
+node_modules
+output
+.bridgetown-cache
+.bridgetown-metadata
+.sass-cache
+.bundle
+tmp
+.npm
+.node_repl_history
+.pnp
+.pnp.js
+yarn-error.log
+yarn-debug.log*
+.DS_Store

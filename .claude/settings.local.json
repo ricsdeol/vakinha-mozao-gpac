@@ -8,7 +8,8 @@
       "WebFetch(domain:lucide.dev)",
       "Bash(while read:*)",
       "Bash(do mv:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(bin/bridgetown build:*)"
     ]
   }
 }
