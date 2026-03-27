@@ -26,6 +26,7 @@ jobs:
       - name: Build
         env:
           BRIDGETOWN_ENV: production
+          BRIDGETOWN_BASE_PATH: /vakinha-mozao-gpac
         run: bin/bridgetown deploy
 
       - name: Upload build artifact

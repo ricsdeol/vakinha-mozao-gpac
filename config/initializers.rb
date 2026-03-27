@@ -18,6 +18,10 @@ Bridgetown.configure do |config|
   # The base hostname & protocol for your site, e.g. https://example.com
   url ""
 
+  # Sub-path for deployments like GitHub Pages (e.g. /vakinha-mozao-gpac).
+  # Set BRIDGETOWN_BASE_PATH env var in CI; leave empty for local dev.
+  base_path ENV.fetch("BRIDGETOWN_BASE_PATH", "")
+
   # Available options are `erb` (default), `serbea`, or `liquid`
   template_engine "erb"
 
