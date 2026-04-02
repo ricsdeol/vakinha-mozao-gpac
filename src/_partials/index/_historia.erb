@@ -1,12 +1,24 @@
-<section class="py-20 px-6 bg-trust-light">
+<section class="py-20 px-6 bg-warm-light">
   <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
     <%# Coluna esquerda: Mariane %>
     <div>
-      <span class="text-sm font-semibold uppercase tracking-widest mb-3 block text-primary">Por que esta campanha?</span>
+      <span class="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-white text-primary">Por que esta campanha?</span>
       <h2 class="text-3xl md:text-4xl font-black mb-6 text-ink">
         Uma escolha de coração
       </h2>
+
+      <%# Foto da Mariane %>
+      <div class="mb-6 flex justify-center">
+        <div class="-rotate-2 p-2 bg-white rounded-2xl shadow-lg ring-4 ring-primary/20 max-w-[200px] w-full">
+          <img
+            src="<%= relative_url '/images/mari_historia.jpeg' %>"
+            alt="Mariane usando camiseta do GPAC"
+            class="rounded-xl w-full object-cover object-top aspect-[3/4]"
+          />
+        </div>
+      </div>
+
       <div class="space-y-4 text-base leading-relaxed text-ink-light">
         <p>
           Aniversário é um dia especial. E dessa vez, decidi usá-lo para fazer algo que realmente importa.
@@ -18,17 +30,23 @@
           Em vez de presentes, peço o seu PIX. Simples assim. 🐾
         </p>
       </div>
-      <a href="https://www.instagram.com/mari_fps/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 mt-6 text-sm font-semibold text-primary">
-        <%= render "icons/instagram", css_class: nil %> <%= site.data.general.instagram_mariane %> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-      </a>
     </div>
 
     <%# Coluna direita: GPAC %>
     <div>
-      <span class="text-sm font-semibold uppercase tracking-widest mb-3 block text-nature">Quem recebe sua doação</span>
+      <span class="inline-block text-xs font-semibold uppercase tracking-widest px-3 py-1 rounded-full mb-4 bg-white text-nature">Quem recebe sua doação</span>
       <h2 class="text-3xl md:text-4xl font-black mb-6 text-ink">
         GPAC: amor em ação em Limeira
       </h2>
+
+      <div class="mb-6 flex justify-center">
+        <div class="-rotate-2 p-2 bg-white rounded-2xl shadow-lg ring-4 ring-primary/20 max-w-[200px] w-full">
+          <img
+              src="<%= relative_url '/images/gpac_historia.jpeg' %>"            alt="Animais resgatados pelo GPAC"            class="rounded-xl w-full object-cover object-top aspect-[3/4]"
+          />
+        </div>
+      </div>
+
       <div class="space-y-4 text-base leading-relaxed text-ink-light">
         <p>
           O Grupo de Proteção Animal de Limeira (GPAC) nasceu da indignação e do amor. São voluntários que não conseguem cruzar os braços diante de um animal em sofrimento.
@@ -36,22 +54,6 @@
         <p>
           Resgatamos, tratamos, castramos e encontramos lares para cães e gatos em situação de risco. Cada animal que passa pelo GPAC recebe cuidado veterinário, carinho e uma segunda chance de viver.
         </p>
-      </div>
-      <div class="mt-6 flex flex-col gap-2">
-        <a href="https://www.gpac.org.br/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm font-semibold text-nature">
-          <i data-lucide="globe" class="w-4 h-4"></i> gpac.org.br <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-        <a href="https://www.instagram.com/gpaclimeira/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-sm font-semibold text-nature">
-          <%= render "icons/instagram", css_class: nil %> <%= site.data.general.instagram_gpac %> <i data-lucide="arrow-right" class="w-4 h-4"></i>
-        </a>
-      </div>
-
-      <%# Placeholder visual — substituir por foto real dos animais %>
-      <div class="mt-8 rounded-3xl overflow-hidden aspect-square flex items-center justify-center text-center p-8 bg-nature-light">
-        <div>
-          <div class="text-7xl mb-4">🐶🐱</div>
-          <p class="text-sm font-medium text-nature">Adicione aqui uma foto dos animais resgatados</p>
-        </div>
       </div>
     </div>
 
