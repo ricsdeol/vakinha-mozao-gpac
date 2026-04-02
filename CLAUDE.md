@@ -48,8 +48,8 @@ rake frontend:dev       # esbuild watch mode
 - **Static assets** in `src/images/` — copied as-is to output
 
 ### Frontend Build
-- **Entry point:** `frontend/javascript/index.js` — imports CSS and auto-discovers components
-- **CSS:** `frontend/styles/index.css` uses `@import "tailwindcss"` with CSS custom properties for theming
+- **Entry point:** `frontend/javascript/index.js` — imports CSS and auto-discovers components, all js bundled by esbuild and all modification when need js is made in this file
+- **CSS:** `frontend/styles/index.css` uses `@import "tailwindcss"` with CSS custom properties for theming, all change about styles should be made in this file using Tailwind best practices
 - **esbuild config:** `esbuild.config.js` extends `config/esbuild.defaults.js` (Bridgetown-managed, don't edit defaults)
 - **PostCSS:** `postcss.config.js` chains `@tailwindcss/postcss` → `postcss-flexbugs-fixes` → `postcss-preset-env`
 - **Path aliases** (in `jsconfig.json`): `$styles/*`, `$javascript/*`, `$components/*`
@@ -72,7 +72,7 @@ rake frontend:dev       # esbuild watch mode
 
 - Use ERB for templates (not Liquid or Serbea)
 - Access resource front matter via `data.field_name` (not `page.field_name`)
-- Access site metadata via `site.metadata` (loaded from `src/_data/site_metadata.yml`)
+- Access site metadata via `site.[file_name]` (loaded from `src/_data/<file_name>.yml`)
 - Iterate collections with `collections.<name>.each` in ERB
 - Components use the pattern: `src/_components/shared/name.rb` + `name.erb`
 - Render components with `<%= render ComponentClass.new(args) %>`
