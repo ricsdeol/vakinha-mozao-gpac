@@ -15,8 +15,10 @@
     <script src="<%= asset_path :js %>" defer></script>
     <%= live_reload_dev_js %>
   </head>
-  <body class="pb-16 xl:pb-0">
-    <%= yield %>
+  <body>
+    <div class="pb-16 xl:pb-0">
+      <%= yield %>
+    </div>
     <%= render "pix/float" %>
     <%= render "footer" %>
 
