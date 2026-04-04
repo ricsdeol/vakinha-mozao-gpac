@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Load .env if it exists
+if [ -f "$(dirname "$0")/../.env" ]; then
+  export $(grep -v '^#' "$(dirname "$0")/../.env" | xargs)
+fi
+
+# Validate required env vars
+: "${FTP_HOST:?Variável FTP_HOST não definida no .env}"
+: "${FTP_USER:?Variável FTP_USER não definida no .env}"
+: "${FTP_PASSWORD:?Variável FTP_PASSWORD não definida no .env}"
+
+echo "=============================="
+echo "  VAKINHA MOZÃO - Deploy"
+echo "=============================="
+echo ""
+
+# Step 1: Build
+echo ">>> Executando build..."
+BRIDGETOWN_ENV=production bin/bridgetown deploy
+echo ">>> Build concluído!"
+echo ""
+
+# Step 2: FTP upload
+echo ">>> Iniciando upload para $FTP_HOST..."
+lftp -u "$FTP_USER","$FTP_PASSWORD" "$FTP_HOST" \
+  -e "set ssl:verify-certificate no; mirror -R --verbose output/ /; quit"
+
+echo ""
+echo ">>> Deploy concluído com sucesso!"
